@@ -1,0 +1,50 @@
+server:
+  port: 80
+  servlet:
+    context-path: /wechatsell
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: 123456
+    url: jdbc:mysql://127.0.0.1:3306/wechatsell?useSSL=false&characterEncoding=utf-8&serverTimezone=GMT
+  jpa:
+    show-sql: true
+  jackson:
+    default-property-inclusion: non_null
+  redis:
+    host: localhost
+    port: 6379
+wechat:
+  # 微信商家id
+  mpAppId: wxd8df0c527c4cf0de
+  # 开放平台(买家)密钥
+  mpAppSecret: 025fa7459969577f7c8acb283fa438fe
+  #微信二维码id
+  openAppId: wx6ad144e54af67d87
+  #微信二维码密钥
+  openAppSecret: 91a2ff6d38a2bbccfb7e9f9079108e2e
+  #商户号
+  mchId: 1483469312
+  #商户密钥
+  mchKey: 06C56A89949D617xxxxxxxxxxx
+  #商户证书路径
+  keyPath: /var/weixin_cert/h5.p12
+  #微信支付异步通知地址
+  notifyUrl: http://baymaxsell.natapp4.cc/wechatsell/pay/notify
+  TemplateId:
+    orderStatus: 9bZ7sa6uCzhavuXaWaOo2DkUhdVib0x-WfdOTHlai2I
+
+projecturl:
+  #微信公众平台授权url
+  wechatMpAuthorize: http://baymaxsell.natapp1.cc
+  #微信开放平台授权url
+  wechatOpenAuthorize: http://baymaxsell.natapp1.cc
+  #点餐系统
+  wechatsell: http://baymaxsell.natapp1.cc
+
+logging:
+  level:
+    com.bhw.wechatsell.entity.mapper: trace
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
